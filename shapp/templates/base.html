@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block title %}
+      <title>СТУДЕНТСМОТР 1.0</title>
+    {% endblock %}
+  </head>
+  <body>
+    <p><a href={% url "index" %}>Главная</a></p>
+    <p><a href={% url "groups" %}>Группы</a></p>
+    <p><a href={% url "students" %}>Студенты</a></p>
+    <p><a href={% url "subjects" %}>Учебные дисциплины</a></p>
+
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Список учебных дисциплин</h1>
+  {% if object_list %}
+    <ul>
+      {% for obj in object_list %}
+      <li>
+        <p>{{ obj.name }}</a><br>
+        Группы:
+        <ol>
+            {% for group in obj.groups %}
+            <li>
+            <p>{{ group.name }}</p>
+            </li>
+            {% endfor %}
+        </ol>
+      </li>
+      <hr>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Не существует ни одной учебной дисциплины.</p>
+  {% endif %}
+{% endblock %}

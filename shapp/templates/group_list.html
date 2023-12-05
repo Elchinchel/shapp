@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Список групп</h1>
+  {% if object_list %}
+    <ul>
+      {% for obj in object_list %}
+      <li>
+        <p>{{ obj.name }}</a><br>
+        Студенты:
+        <ol>
+          {% for student in obj.students %}
+          <li>
+            <p>{{ student.name }}</p>
+          </li>
+          {% endfor %}
+        </ol>
+        Учебные дисциплины:
+        <ol>
+          {% for subject in obj.subjects %}
+          <li>
+            <p>{{ subject.name }}</p>
+          </li>
+          {% endfor %}
+        </ol>
+      </li>
+      <hr>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Не существует ни одной группы.</p>
+  {% endif %}
+{% endblock %}
